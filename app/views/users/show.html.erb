@@ -1,0 +1,13 @@
+<div id="show">
+    <div id="showleft">
+        <p style="font-size: 20px;"> Welcome to your CF-SLA APP</p>
+    </div>
+    <div id="showright">
+         <p></p>
+          <p style="font-size: 16px;"><em><%= @user.email %></em></p>
+          <p><em><%= link_to 'Logout' ,signout_path, method: "delete" %></em></p>
+    </div>
+</div>
+<div class="footer">
+<%= link_to 'Back to Home', users_path %>
+</div>

@@ -1,0 +1,86 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+div {
+  border-radius: 5px;
+}
+#header{
+  z-index: 1;
+  position: fixed;
+  margin-top: -70px;
+  height: 60px;
+  width: 97.5%;
+  background-color:#add8e6 ;
+  margin-bottom: 10px;
+  text-align: center;
+}
+#name {
+  float:left;
+  margin-left: 25px;
+  padding-top: 5px;
+  font-size: 16px;
+  font-family: Verdana, sans-serif;
+  color: #00008b;
+  font-weight: bold;
+}
+#login{
+  float:right;
+  margin-right: 100px;
+  padding-top: 5px;
+  font-size: 16px;
+  font-family: Verdana, sans-serif;
+  color:  #00008b;
+  font-weight: bold;
+}
+#middle_text{
+  position: relative;
+  margin-top:70px;
+  height: 100px;
+  text-align: center;
+
+}
+h1{
+  padding-top: 50px;
+  font-family: Verdana;
+  color: #8b0000;
+  font-weight: bolder;
+}
+#middle_button{
+  position: relative;
+  height: 20px;
+  background-color: #d3d3d3;
+  width:10%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+}
+.footer {
+  position: relative;
+  height: 25px;
+  clear: both;
+  font-family: Verdana, sans-serif;
+  font-size: 14px;
+  text-align: left;
+  color: #ffffff;
+  margin-bottom: 10px;
+  margin-top: 400px;
+}
+#signupnew{
+ }
+#showleft{
+  float:left;
+  color: #b8860b;
+  font-weight: bold;
+  margin-left: 15px;
+}
+#showright{
+  float:right;
+  color:#2e8b57;
+  margin-right: 20px;
+}
+#show{
+  background-color: #87ceeb;
+  height: 70px;
+  width: 100%;
+}
