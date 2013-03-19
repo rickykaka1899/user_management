@@ -6,6 +6,7 @@
          <p></p>
           <p style="font-size: 16px;"><em><%= @user.email %></em></p>
           <p><em><%= link_to 'Logout' ,signout_path, method: "delete" %></em></p>
+          <p><em><%= link_to 'edit' ,edit_user_path(@user) %></em></p>
     </div>
 </div>
 <div class="footer">

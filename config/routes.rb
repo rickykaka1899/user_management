@@ -5,6 +5,8 @@ UserManagement::Application.routes.draw do
 
 
   match '/signup', to: 'users#new'
+  match '/updateuser', to: 'users#update'
+  match '/showuser', to: 'users#show'
   match '/signin', to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
 
