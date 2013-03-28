@@ -2,13 +2,18 @@ UserManagement::Application.routes.draw do
 #  get "users/new"
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :apps
 
 
-  match '/signup', to: 'users#new'
-  match '/updateuser', to: 'users#update'
-  match '/showuser', to: 'users#show'
-  match '/signin', to: 'sessions#new'
-  match '/signout', to: 'sessions#destroy', via: :delete
+  match '/register', to: 'users#new'
+  #match '/updateuser', to: 'users#update'
+  #match '/showuser', to: 'users#show'
+  match '/login', to: 'sessions#new'
+  match '/logout', to: 'sessions#destroy', via: :delete
+
+  match '/apppush', to: 'apps#new'
+  match '/backtouser', to: 'users#show'
+#  match '/push', to: 'users#push'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,32 @@
+<% provide(:title, 'Appinfo') %>
+<h1>App info</h1>
+
+<p>
+  <b>User:</b>
+  <%= @app.user_id %>
+</p>
+<p>
+  <b>Name:</b>
+  <%= @app.name %>
+</p>
+
+<p>
+  <b>Memory:</b>
+  <%= @app.memory %>
+</p>
+
+<p>
+  <b>instances:</b>
+  <%= @app.instances %>
+</p>
+
+<p>
+  <b>Framework:</b>
+  <%= @app.framework %>
+</p>
+
+
+
+<%= link_to "back", new_app_path %>
+
+

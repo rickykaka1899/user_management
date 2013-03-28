@@ -37,5 +37,8 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
+  #def push
+  #  @user = User.find(params[:id])
+  #end
 
 end

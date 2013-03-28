@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@app) do |f| %>
+        <% if @app.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@app.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+              <ul>
+                <% @app.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+
+        <tr>
+          <td>
+            <table align="center" border=1  width="60%" cellpadding=13>
+              <tr>
+                  <td>User_email</td>
+                  <td><%=  f.select :user_id, User.all.map {|p| [ p.email, p.id ] },  {:prompt => '--请选择--'}%></td>
+               </tr>
+              <tr>
+                <td>Choose File：      </td>
+                <td align="left"><input type="text" name="browse"></td>
+                <td><input type="button" name="browseb" value="browse..."></td>
+              </tr>
+              <tr>
+                <td><%= f.label :name %></td>
+                <td><%= f.text_field :name %></td>
+              </tr>
+              <tr>
+                <td>Framework</td>
+                <td align="left"> <%=select :app, :framework, AppsHelper::FRAMEWORKS.each_key.to_a, {:prompt => '--请选择--'}%></td>
+              </tr>
+              <tr>
+                <td><%= f.label :instances %></td>
+                <td align="left"> <%= f.text_field :instances %></td>
+              </tr>
+              <tr>
+                <td><%= f.label :memory %></td>
+                <td align="left"> <%= f.text_field :memory %></td>
+              </tr>
+
+              <tr>
+                <td>URL：      </td>
+                <td align="left"><input type="text" name="link"></td>
+              </tr>
+              <tr>
+
+              </tr>
+                <td></td>
+                <td><%= f.submit "Push", class: "btn btn-large btn-primary" %></td>
+            </table>
+          </td>
+        </tr>
+
+        <div>
+
+        </div>
+    <% end %>
+  </div>
+</div>

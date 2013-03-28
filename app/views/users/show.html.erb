@@ -5,9 +5,16 @@
     <div id="showright">
          <p></p>
           <p style="font-size: 16px;"><em><%= @user.email %></em></p>
-          <p><em><%= link_to 'Logout' ,signout_path, method: "delete" %></em></p>
+          <p><em><%= link_to 'Logout' ,logout_path, method: "delete" %></em></p>
           <p><em><%= link_to 'edit' ,edit_user_path(@user) %></em></p>
     </div>
+</div>
+<h2>Applist</h2>
+<div>
+  <%= render @user.apps %>
+</div>
+<div>
+  <%= link_to "App push", apppush_path(@user) %>
 </div>
 <div class="footer">
 <%= link_to 'Back to Home', users_path %>
