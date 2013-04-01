@@ -1,20 +1,21 @@
-<div id="show">
-    <div id="showleft">
-        <p style="font-size: 20px;"> Welcome to your CF-SLA APP</p>
-    </div>
-    <div id="showright">
-         <p></p>
-          <p style="font-size: 16px;"><em><%= @user.email %></em></p>
-          <p><em><%= link_to 'Logout' ,logout_path, method: "delete" %></em></p>
-          <p><em><%= link_to 'edit' ,edit_user_path(@user) %></em></p>
-    </div>
-</div>
-<h2>Applist</h2>
+<%= render 'welcome' %>
 <div>
-  <%= render @user.apps %>
+  <h2>Apps</h2>
+  <table align="center" border=1  width="60%" cellpadding=13>
+    <tr>
+      <th>Name</th>
+      <th>Framework</th>
+      <th>Instances</th>
+      <th>Memory</th>
+      <th>URL</th>
+      <th colspan="3">Operation</th>
+    </tr>
+    <%= render @user.apps %>
+  </table>
+<br />
 </div>
 <div>
-  <%= link_to "App push", apppush_path(@user) %>
+  <%= link_to "New App", new_user_app_path(current_user) %>
 </div>
 <div class="footer">
 <%= link_to 'Back to Home', users_path %>

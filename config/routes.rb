@@ -1,8 +1,10 @@
 UserManagement::Application.routes.draw do
 #  get "users/new"
-  resources :users
+  resources :users do
+    resources :apps, :only => [:new, :create, :show, :index, :destroy]
+  end
   resources :sessions, only: [:new, :create, :destroy]
-  resources :apps
+  #resources :apps
 
 
   match '/register', to: 'users#new'
@@ -13,6 +15,7 @@ UserManagement::Application.routes.draw do
 
   match '/apppush', to: 'apps#new'
   match '/backtouser', to: 'users#show'
+  #match '/app/show' => 'apps#show', :as => :show
 #  match '/push', to: 'users#push'
 
   # The priority is based upon order of creation:
@@ -70,5 +73,5 @@ UserManagement::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
+   match ':controller(/:action(/:id))(.:format)'
 end

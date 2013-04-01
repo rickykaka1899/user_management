@@ -1,6 +1,6 @@
 <div class="row">
   <div class="span6 offset3">
-    <%= form_for(@app) do |f| %>
+    <%= form_for([@user,@app]) do |f| %>
         <% if @app.errors.any? %>
             <div id="error_explanation">
               <h2><%= pluralize(@app.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -12,14 +12,13 @@
               </ul>
             </div>
         <% end %>
+        <div class="field">
+          <%= f.hidden_field :user_id , :value=>params[:user_id] %>
+        </div>
 
         <tr>
           <td>
             <table align="center" border=1  width="60%" cellpadding=13>
-              <tr>
-                  <td>User_email</td>
-                  <td><%=  f.select :user_id, User.all.map {|p| [ p.email, p.id ] },  {:prompt => '--请选择--'}%></td>
-               </tr>
               <tr>
                 <td>Choose File：      </td>
                 <td align="left"><input type="text" name="browse"></td>
@@ -50,7 +49,7 @@
 
               </tr>
                 <td></td>
-                <td><%= f.submit "Push", class: "btn btn-large btn-primary" %></td>
+                <td><%= f.submit "Add", class: "btn btn-large btn-primary" %></td>
             </table>
           </td>
         </tr>

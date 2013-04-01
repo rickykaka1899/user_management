@@ -1,0 +1,13 @@
+      <tr id="<%= "app_#{app.id}" %>">
+        <td ><%= app.name %></td>
+        <td><%= app.framework %></td>
+        <td><%= app.instances %></td>
+        <td><%= app.memory %></td>
+        <td></td>
+        <td><%= link_to 'show', user_app_path(@user,app)  %></td>
+        <td><%= link_to 'edit', user_app_path(@user,app)  %></td>
+        <td><%= link_to 'Delete',[app.user, app],
+                        :confirm => 'Are you sure?',
+                        :method => :delete %></td>
+      </tr>
+<br />
